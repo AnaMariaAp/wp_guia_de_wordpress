@@ -1,0 +1,69 @@
+// SIZE CONTROL VARS
+$size-control-placeholder: 530px;
+$banner-height: 350px; // Banners
+$site-menu-width-control: 101px; // Site menu
+$menu-list-icons-width: 35px;
+$header-height-control: 70px; // Header
+$mobile-navbar-height: 56px; // Mobile header
+$video-bg-height: 490px; // Hero Unit and Videocover
+$user-card-height: 42px; // User cards
+$user-card-width: 70px;
+
+html,
+body {
+	background-color: $body-bg;	
+	&::-webkit-scrollbar { 
+    display: none; 
+	}
+}
+
+.site-wrapper,
+.site-content {
+	position: relative;
+}
+
+// HERO UNIT
+.hero-unit {
+	@include bg-img-control;
+	height: $video-bg-height;
+	position: relative;
+	overflow: hidden;
+	&.video-bg {
+		overflow: hidden;
+		height: $video-bg-height;
+	}
+	.overlay,
+	.hero-unit-pic {
+		@include position(absolute, 0 0 0 0);
+		height: $video-bg-height;
+	}
+	.hero-unit-pic {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+// CLICKABLE DIV
+[data-href]{
+	cursor: pointer;
+}
+
+
+/* Content item list
+*/
+
+.content-items-list{
+	@include normalize-text;
+	.content-item{
+		padding: 21px;
+		padding: rem(21px);
+		border-bottom: 1px solid $gray-lighter;
+	}
+	.content-item-title{
+		@include bold;
+	}
+	.content-item-meta{}
+	.content-item-content{}
+}
